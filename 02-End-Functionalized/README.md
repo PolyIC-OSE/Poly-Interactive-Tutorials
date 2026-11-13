@@ -1,41 +1,30 @@
-# End-functionalized Plots
+# End-functionalized polymers
 
-This project implements the singly and doubly end-functionalized linear-polymer equations from equations (3), (4), (9), and (10) of the supplied Gorbunov paper.
+[← All tutorials](../README.md) · [Open in Google Colab](https://colab.research.google.com/github/PolyIC-OSE/Poly-Interactive-Tutorials/blob/main/02-End-Functionalized/end_functionalized_plots.ipynb)
 
-## Files
-
-- `end_functionalized_plots.ipynb`: explained calculation and plots.
-- `end_functionalized_plots.py`: standalone Python version.
-- `singly_doubly_functionalized_K_vs_g.png`: partition coefficient versus pore-size ratio.
-- `singly_doubly_functionalized_K_vs_N.png`: partition coefficient versus chain length.
-- `requirements.txt`: Python packages used by the project.
+Compare ordinary, singly functionalized, and doubly functionalized chains versus size ratio and chain length.
 
 ## Run
 
-From the repository root:
+In Colab, connect to a runtime and run the cells from top to bottom. The notebook uses Python's standard library and Matplotlib, available in standard Colab runtimes. If Matplotlib is unavailable, run `%pip install "matplotlib>=3.9,<4"` in a new cell first.
+
+For local use, install the root requirements as described in the [main guide](../README.md), then from the repository root:
 
 ```bash
-cd "End-functionalized Plots"
-python3 -m pip install -r requirements.txt
-python3 end_functionalized_plots.py
+cd 02-End-Functionalized
+python end_functionalized_plots.py
 ```
 
-Open the notebook in VS Code and run its cells from top to bottom.
+Or open `end_functionalized_plots.ipynb` in Jupyter and run all cells. The plotting code writes `singly_doubly_functionalized_K_vs_g.png` and `singly_doubly_functionalized_K_vs_N.png` in the current working directory. To preserve the original example figures, run a copy in a scratch folder.
 
-## Model
+## Explore
 
-For a singly end-functionalized chain:
+Change `q_a` and `q_b` to compare end-group contributions. Set both to zero to recover the ordinary chain. Change `b_over_pore_radius` in the notebook (`b_over_d` in the script) to explore the chain-length conversion.
 
-$$K^{(1)}=K^{(0)}+q_a p_a$$
+The model uses g = R_G/R_P. The default `terms=101` includes 51 odd modes, rather than 101 terms.
 
-For a doubly end-functionalized chain:
+## Files and attribution
 
-$$K^{(2)}=K^{(0)}+q_a p_a+q_b p_b+q_aq_b p_{ab}$$
+`end_functionalized_plots.ipynb` contains the explained calculation; `end_functionalized_plots.py` is the standalone version. The PNG files are original example outputs. `requirements.txt` lists the tutorial runtime dependencies.
 
-For end-functionalized linear chains, the paper gives:
-
-$$p_a=U_1(\lambda,g)=\sum_{k\ odd}\frac{2\lambda}{\lambda+\lambda^2+\alpha_k^2}e^{-\alpha_k^2g^2}$$
-
-$$p_{ab}=U_2(\lambda,g)=\sum_{k\ odd}\frac{2\alpha_k^2}{\lambda+\lambda^2+\alpha_k^2}e^{-\alpha_k^2g^2}$$
-
-where $q_a$ and $q_b$ are reduced end-group interaction parameters and $g=R_G/R_P$ is the polymer-to-pore size ratio.
+Original work: GitHub contributor [shivanshsinglaggn123](https://github.com/shivanshsinglaggn123). Original folder: [End-functionalized Plots](https://github.com/shivanshsinglaggn123/shivanshsinglaggn123.github.io/tree/main/End-functionalized%20Plots).

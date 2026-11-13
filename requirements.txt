@@ -1,0 +1,4 @@
+# Shared runtime and local notebook interface
+matplotlib>=3.9,<4
+jupyterlab>=4,<5
+notebook>=7,<8
