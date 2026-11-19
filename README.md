@@ -1,6 +1,6 @@
 # PolyIC Interactive Tutorials
 
-Explore theoretical polymer interaction chromatography with Python notebooks. Start with the homopolymer model, then explore chains with one or two functional ends.
+Explore theoretical equations that describe polymer interaction chromatography with Python notebooks. Start with the homopolymer model, then explore chains with one or two functional ends.
 
 | Tutorial | Explore | Run in your browser |
 | --- | --- | --- |
