@@ -2,7 +2,7 @@
 
 [← All tutorials](../README.md) · [Open in Google Colab](https://colab.research.google.com/github/PolyIC-OSE/Poly-Interactive-Tutorials/blob/main/02-End-Functionalized/end_functionalized_plots.ipynb)
 
-Compare ordinary, singly functionalized, and doubly functionalized chains versus size ratio and chain length.
+This notebook allows you to compare K for homopolymer, singly functionalized, and doubly functionalized homopolymer chains for a given polymer size (or chain length).
 
 ## Run
 
@@ -19,7 +19,7 @@ Or open `end_functionalized_plots.ipynb` in Jupyter and run all cells. The plott
 
 ## Explore
 
-Change `q_a` and `q_b` to compare end-group contributions. Set both to zero to recover the ordinary chain. Change `b_over_pore_radius` in the notebook (`b_over_d` in the script) to explore the chain-length conversion.
+Change `q_a` and `q_b` to compare end-group contributions. Set both to zero to recover the non-functionalized chain. Change `b_over_pore_radius` in the notebook (`b_over_d` in the script) to explore the chain-length conversion.
 
 The model uses g = R_G/R_P. The default `terms=101` includes 51 odd modes, rather than 101 terms.
 
