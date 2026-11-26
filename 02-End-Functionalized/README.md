@@ -32,12 +32,12 @@ The script saves `singly_doubly_functionalized_K_vs_g.png` and `singly_doubly_fu
 
 ## What to change
 
-- Change `q_a` and `q_b` to explore the functional-end contributions. Setting both to zero should recover the homopolymer result.
+- Change the end-group parameters $q_a$ and $q_b$ by editing the Python variables `q_a` and `q_b`. Setting both to zero should recover the homopolymer result.
 - Change `lambda_value` to explore attraction or repulsion of the ordinary chain units (the model parameter $\lambda$).
-- Change `b_over_pore_radius` to control how chain length maps to $g$ in the notebook. The standalone script calls this parameter `b_over_d`.
+- Change the ratio $b/R_P$ to control how chain length maps to $g$. In the notebook this is the Python variable `b_over_pore_radius`; the standalone script calls it `b_over_d`.
 - Change the `chain_lengths` range to explore a different span of chain lengths.
 
-The default `terms=101` includes the 51 odd modes from 1 through 101; it does not mean 101 terms are summed. The plotted values ($\lambda=0.1$, $q_a=q_b=0.5$, and `b_over_pore_radius=1.0`) are demonstration settings, not experimental measurements.
+The default `terms=101` includes the 51 odd modes from 1 through 101; it does not mean 101 terms are summed. The plotted values ($\lambda=0.1$, $q_a=q_b=0.5$, and $b/R_P=1.0$, set by `b_over_pore_radius=1.0`) are demonstration settings, not experimental measurements.
 
 ## Files and credit
 
