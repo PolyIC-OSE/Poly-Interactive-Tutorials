@@ -2,29 +2,49 @@
 
 [← All tutorials](../README.md) · [Open in Google Colab](https://colab.research.google.com/github/PolyIC-OSE/Poly-Interactive-Tutorials/blob/main/02-End-Functionalized/end_functionalized_plots.ipynb)
 
-This notebook allows you to compare K for homopolymer, singly functionalized, and doubly functionalized homopolymer chains for a given polymer size (or chain length).
+This tutorial compares the partition coefficient for an unfunctionalized homopolymer with linear chains that have one or two functional end groups.
 
-## Run
+## What you'll explore
 
-In Colab, connect to a runtime and run the cells from top to bottom. The notebook uses Python's standard library and Matplotlib, available in standard Colab runtimes. If Matplotlib is unavailable, run `%pip install "matplotlib>=3.9,<4"` in a new cell first.
+- How one functional end changes the homopolymer partition coefficient.
+- How adding a second end introduces an additional two-end contact term.
+- How the results change with polymer-to-pore size ratio `g = R_G/R_P` and chain length `N`.
 
-For local use, install the root requirements as described in the [main guide](../README.md), then from the repository root:
+The equations are implemented from equations (3), (4), (9), and (10) of the supplied paper. The model uses `lambda` for the interaction of ordinary chain units with the pore wall; `q_a` and `q_b` describe the additional interactions of the functional ends.
+
+## Run in Google Colab
+
+Open the notebook with the Colab link above, connect to a runtime, and select **Runtime → Run all**. The notebook uses Python and Matplotlib, which are available in standard Colab runtimes. If Matplotlib is unavailable, run `%pip install "matplotlib>=3.9,<4"` in a code cell and rerun the notebook.
+
+To keep changes, use **File → Save a copy in Drive**. Generated figures are stored in the runtime's temporary storage; download them from the Files panel if you want to keep them.
+
+## Run locally
+
+First follow the environment setup in the [main guide](../README.md). Then, from the repository root, run:
 
 ```bash
-cd 02-End-Functionalized
-python end_functionalized_plots.py
+python 02-End-Functionalized/end_functionalized_plots.py
 ```
 
-Or open `end_functionalized_plots.ipynb` in Jupyter and run all cells. The plotting code writes `singly_doubly_functionalized_K_vs_g.png` and `singly_doubly_functionalized_K_vs_N.png` in the current working directory. To preserve the original example figures, run a copy in a scratch folder.
+To use the notebook instead, start Jupyter from the repository root with `python -m jupyter notebook` and open `02-End-Functionalized/end_functionalized_plots.ipynb`.
 
-## Explore
+The script saves `singly_doubly_functionalized_K_vs_g.png` and `singly_doubly_functionalized_K_vs_N.png` in the current working directory. Running it from the tutorial folder will overwrite those example figures; run a copy in a scratch folder to preserve them.
 
-Change `q_a` and `q_b` to compare end-group contributions. Set both to zero to recover the non-functionalized chain. Change `b_over_pore_radius` in the notebook (`b_over_d` in the script) to explore the chain-length conversion.
+## What to change
 
-The model uses g = R_G/R_P. The default `terms=101` includes 51 odd modes, rather than 101 terms.
+- Change `q_a` and `q_b` to explore the functional-end contributions. Setting both to zero should recover the homopolymer result.
+- Change `lambda_value` to explore attraction or repulsion of the ordinary chain units.
+- Change `b_over_pore_radius` to control how chain length maps to `g` in the notebook. The standalone script calls this parameter `b_over_d`.
+- Change the `chain_lengths` range to explore a different span of chain lengths.
 
-## Files and attribution
+The default `terms=101` includes the 51 odd modes from 1 through 101; it does not mean 101 terms are summed. The plotted values (`lambda=0.1`, `q_a=q_b=0.5`, and `b_over_pore_radius=1.0`) are demonstration settings, not experimental measurements.
 
-`end_functionalized_plots.ipynb` contains the explained calculation; `end_functionalized_plots.py` is the standalone version. The PNG files are original example outputs. `requirements.txt` lists the tutorial runtime dependencies.
+## Files and credit
 
-Original work: GitHub contributor [shivanshsinglaggn123](https://github.com/shivanshsinglaggn123). Original folder: [End-functionalized Plots](https://github.com/shivanshsinglaggn123/shivanshsinglaggn123.github.io/tree/main/End-functionalized%20Plots).
+- `end_functionalized_plots.ipynb`: explained equations, calculations, and plots.
+- `end_functionalized_plots.py`: standalone version of the calculation.
+- `singly_doubly_functionalized_K_vs_g.png`: example plot versus polymer-to-pore size ratio.
+- `singly_doubly_functionalized_K_vs_N.png`: example plot versus chain length.
+- `requirements.txt`: tutorial-specific dependency list.
+
+Original work: [shivanshsinglaggn123](https://github.com/shivanshsinglaggn123). Original project folder: [End-functionalized Plots](https://github.com/shivanshsinglaggn123/shivanshsinglaggn123.github.io/tree/main/End-functionalized%20Plots).

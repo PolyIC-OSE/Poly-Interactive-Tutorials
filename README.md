@@ -1,34 +1,43 @@
 # PolyIC Interactive Tutorials
 
-Explore theoretical equations that describe polymer interaction chromatography with Python notebooks. Start with the homopolymer model, then explore chains with one or two functional ends.
+Interactive Jupyter tutorials for exploring theoretical models of polymer interaction chromatography (PolyIC). Start with an unfunctionalized homopolymer, then compare it with chains that have one or two functional end groups.
 
-| Tutorial | Explore | Run in your browser |
-| --- | --- | --- |
-| 1. Homopolymer partitioning | [Guide](01-Homopolymer/README.md) | [Open in Colab](https://colab.research.google.com/github/PolyIC-OSE/Poly-Interactive-Tutorials/blob/main/01-Homopolymer/reproduce_graph.ipynb) |
-| 2. End-functionalized polymers | [Guide](02-End-Functionalized/README.md) | [Open in Colab](https://colab.research.google.com/github/PolyIC-OSE/Poly-Interactive-Tutorials/blob/main/02-End-Functionalized/end_functionalized_plots.ipynb) |
+## Tutorials
 
-## Getting started
+| Tutorial | Description | Guide | Open in Colab |
+| --- | --- | --- | --- |
+| 1. Homopolymer partitioning | Explore how polymer-to-pore size and wall interactions affect the partition coefficient. | [Guide](01-Homopolymer/README.md) | [Open notebook](https://colab.research.google.com/github/PolyIC-OSE/Poly-Interactive-Tutorials/blob/main/01-Homopolymer/reproduce_graph.ipynb) |
+| 2. End-functionalized polymers | Compare homopolymers with chains that have one or two functional ends. | [Guide](02-End-Functionalized/README.md) | [Open notebook](https://colab.research.google.com/github/PolyIC-OSE/Poly-Interactive-Tutorials/blob/main/02-End-Functionalized/end_functionalized_plots.ipynb) |
 
-Colab requires no local installation. Open a notebook above, connect to a runtime, and choose **Runtime → Run all**. Edit the plotting parameters and rerun the relevant cells. Save your own copy to retain changes; generated figures are temporary until downloaded from Colab's Files panel.
+## Run in Google Colab
 
-For a local installation, Python 3.10 or newer is recommended:
+Open a notebook using its Colab link, connect to a runtime, and choose **Runtime → Run all**. The notebooks use Python and Matplotlib, which are available in standard Colab runtimes. If Matplotlib is unavailable, run `%pip install "matplotlib>=3.9,<4"` in a code cell and rerun the notebook.
+
+To keep changes, use **File → Save a copy in Drive**. Generated figures are in the Colab runtime's temporary storage; download them from the Files panel if you want to keep them.
+
+## Run locally
+
+From the repository root, create an environment and install the shared requirements:
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
-python -m jupyter notebook
 ```
 
-Open either tutorial notebook and select the Python kernel from this environment. Each folder also includes a standalone script and original example figures. The tutorial guides give exact commands.
+Run a standalone tutorial script from the repository root:
+
+```bash
+python 01-Homopolymer/reproduce_graph.py
+python 02-End-Functionalized/end_functionalized_plots.py
+```
+
+Or start Jupyter with `python -m jupyter notebook` and open either notebook. Each tutorial guide also lists its notebook, script, and generated figure files.
 
 ## Scientific scope
 
-These are educational implementations of ideal-chain slit-pore models, not fits to experimental data. The original calculation code and saved example figures are preserved. Run completion and regression checks do not establish physical validity.
+These are educational implementations of ideal-chain slit-pore models, not fits to experimental data. A notebook running successfully does not, by itself, establish that a model is physically valid for a particular experiment.
 
 ## Credit and reuse
 
-Original notebooks, Python calculations, and example figures were developed by **shivanshsinglaggn123** 
-
-PolyIC provides the tutorial organization and setup documentation. Permission to copy with credit was confirmed by the repository owner; an open-source license has not been established. No license is added here.
-
+The original notebooks, Python calculations, and example figures were developed by [shivanshsinglaggn123](https://github.com/shivanshsinglaggn123). PolyIC provides the tutorial organization and setup documentation. Permission to copy with credit was confirmed by the repository owner; an open-source license has not been established, so no license is added here.

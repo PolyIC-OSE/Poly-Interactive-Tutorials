@@ -2,29 +2,43 @@
 
 [← All tutorials](../README.md) · [Open in Google Colab](https://colab.research.google.com/github/PolyIC-OSE/Poly-Interactive-Tutorials/blob/main/01-Homopolymer/reproduce_graph.ipynb)
 
-Compare partition coefficients across polymer-to-pore size ratios and wall interaction parameters.
+This tutorial calculates and plots the partition coefficient for an unfunctionalized homopolymer in a slit-like pore.
 
-## Run
+## What you'll explore
 
-In Colab, connect to a runtime and run the cells from top to bottom. The notebook uses Python's standard library and Matplotlib, available in standard Colab runtimes. If Matplotlib is unavailable, run `%pip install "matplotlib>=3.9,<4"` in a new cell first.
+- How the polymer-to-pore size ratio, `g = R_G/R_P`, changes the partition coefficient `K`.
+- How the wall interaction parameter `lambda` changes the curves.
+- How numerical root finding and a finite sum approximate the model equation.
 
-For local use, install the root requirements as described in the [main guide](../README.md), then from the repository root:
+## Run in Google Colab
+
+Open the notebook with the Colab link above, connect to a runtime, and select **Runtime → Run all**. The notebook uses Python and Matplotlib, which are available in standard Colab runtimes. If Matplotlib is unavailable, run `%pip install "matplotlib>=3.9,<4"` in a code cell and rerun the notebook.
+
+To keep changes, use **File → Save a copy in Drive**. The generated figure is stored in the runtime's temporary storage; download it from the Files panel if you want to keep it.
+
+## Run locally
+
+First follow the environment setup in the [main guide](../README.md). Then, from the repository root, run:
 
 ```bash
-cd 01-Homopolymer
-python reproduce_graph.py
+python 01-Homopolymer/reproduce_graph.py
 ```
 
-Or open `reproduce_graph.ipynb` in Jupyter and run all cells. The plotting code writes `reproduced_graph.png` in the current working directory. To preserve the original example figures, run a copy in a scratch folder.
+To use the notebook instead, start Jupyter from the repository root with `python -m jupyter notebook` and open `01-Homopolymer/reproduce_graph.ipynb`.
 
-## Explore
+The script saves `reproduced_graph.png` in the current working directory. Running it from the tutorial folder will overwrite that folder's example figure; run a copy in a scratch folder to preserve the original.
 
-Change `lambda_values` and compare attraction (negative λ), repulsion (positive λ), and the neutral case (λ = 0). Change the range of `g_values` to explore size effects.
+## What to change
 
-The model uses g = R_G/R_P. The default `terms=101` includes 51 odd modes, rather than 101 terms.
+Edit `lambda_values` to compare attraction (negative values), repulsion (positive values), and the neutral case (`lambda = 0`). Change the range of `g_values` to explore different polymer-to-pore size ratios.
 
-## Files and attribution
+The default `terms=101` includes the 51 odd modes from 1 through 101; it does not mean 101 terms are summed.
 
-`reproduce_graph.ipynb` contains the explained calculation; `reproduce_graph.py` is the standalone version. The PNG files are original example outputs. `requirements.txt` lists the tutorial runtime dependencies.
+## Files and credit
 
-Original work: GitHub contributor [shivanshsinglaggn123](https://github.com/shivanshsinglaggn123). Original folder: [Homopolymer Graph](https://github.com/shivanshsinglaggn123/shivanshsinglaggn123.github.io/tree/main/Homopolymer%20Graph).
+- `reproduce_graph.ipynb`: explained calculation and plot.
+- `reproduce_graph.py`: standalone version of the calculation.
+- `reproduced_graph.png`: example output.
+- `requirements.txt`: tutorial-specific dependency list.
+
+Original work: [shivanshsinglaggn123](https://github.com/shivanshsinglaggn123). Original project folder: [Homopolymer Graph](https://github.com/shivanshsinglaggn123/shivanshsinglaggn123.github.io/tree/main/Homopolymer%20Graph).
