@@ -6,8 +6,8 @@ This tutorial calculates and plots the partition coefficient for an unfunctional
 
 ## What you'll explore
 
-- How the polymer-to-pore size ratio \(g=R_G/R_P\) changes the partition coefficient \(K\).
-- How the ordinary-unit wall interaction parameter \(\lambda\) changes the curves.
+- How the polymer-to-pore size ratio $g=R_G/R_P$ changes the partition coefficient $K$.
+- How the ordinary-unit wall interaction parameter $\lambda$ changes the curves.
 - How numerical root finding and a finite sum approximate the model equation.
 
 ## Run in Google Colab
@@ -30,7 +30,7 @@ The script saves `reproduced_graph.png` in the current working directory. Runnin
 
 ## What to change
 
-Edit `lambda_values` to compare attraction (negative \(\lambda\)), repulsion (positive \(\lambda\)), and the neutral case (\(\lambda=0\)). Change the range of `g_values` to explore different polymer-to-pore size ratios.
+Edit `lambda_values` to compare attraction (negative $\lambda$), repulsion (positive $\lambda$), and the neutral case ($\lambda=0$). Change the range of `g_values` to explore different polymer-to-pore size ratios.
 
 The default `terms=101` includes the 51 odd modes from 1 through 101; it does not mean 101 terms are summed.
 
