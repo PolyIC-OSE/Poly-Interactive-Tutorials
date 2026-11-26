@@ -2,6 +2,8 @@
 
 Interactive Jupyter tutorials for exploring theoretical models of polymer interaction chromatography (PolyIC). Start with an unfunctionalized homopolymer, then compare it with chains that have one or two functional end groups.
 
+The tutorials examine how the partition coefficient \(K\) changes with polymer-to-pore size ratio \(g=R_G/R_P\), ordinary-unit interaction \(\lambda\), and functional-end interactions.
+
 ## Tutorials
 
 | Tutorial | Description | Guide | Open in Colab |

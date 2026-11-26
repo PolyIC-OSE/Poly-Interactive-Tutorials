@@ -8,9 +8,9 @@ This tutorial compares the partition coefficient for an unfunctionalized homopol
 
 - How one functional end changes the homopolymer partition coefficient.
 - How adding a second end introduces an additional two-end contact term.
-- How the results change with polymer-to-pore size ratio `g = R_G/R_P` and chain length `N`.
+- How the results change with polymer-to-pore size ratio \(g=R_G/R_P\) and chain length \(N\).
 
-The equations are implemented from equations (3), (4), (9), and (10) of the supplied paper. The model uses `lambda` for the interaction of ordinary chain units with the pore wall; `q_a` and `q_b` describe the additional interactions of the functional ends.
+The equations are implemented from equations (3), (4), (9), and (10) of the supplied paper. The parameter \(\lambda\) describes interactions of ordinary chain units with the pore wall; \(q_a\) and \(q_b\) describe the additional interactions of the functional ends. In the Python code, these are named `lambda_value`, `q_a`, and `q_b`.
 
 ## Run in Google Colab
 
@@ -33,11 +33,11 @@ The script saves `singly_doubly_functionalized_K_vs_g.png` and `singly_doubly_fu
 ## What to change
 
 - Change `q_a` and `q_b` to explore the functional-end contributions. Setting both to zero should recover the homopolymer result.
-- Change `lambda_value` to explore attraction or repulsion of the ordinary chain units.
-- Change `b_over_pore_radius` to control how chain length maps to `g` in the notebook. The standalone script calls this parameter `b_over_d`.
+- Change `lambda_value` to explore attraction or repulsion of the ordinary chain units (the model parameter \(\lambda\)).
+- Change `b_over_pore_radius` to control how chain length maps to \(g\) in the notebook. The standalone script calls this parameter `b_over_d`.
 - Change the `chain_lengths` range to explore a different span of chain lengths.
 
-The default `terms=101` includes the 51 odd modes from 1 through 101; it does not mean 101 terms are summed. The plotted values (`lambda=0.1`, `q_a=q_b=0.5`, and `b_over_pore_radius=1.0`) are demonstration settings, not experimental measurements.
+The default `terms=101` includes the 51 odd modes from 1 through 101; it does not mean 101 terms are summed. The plotted values (\(\lambda=0.1\), \(q_a=q_b=0.5\), and `b_over_pore_radius=1.0`) are demonstration settings, not experimental measurements.
 
 ## Files and credit
 
